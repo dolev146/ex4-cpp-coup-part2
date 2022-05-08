@@ -9,7 +9,31 @@ namespace coup
 
     void Captain::block(Player &p)
     {
+        if (this->board->game_over == true && this->board->game_started == false && this->board->playersObj.size() < 2)
+        {
+            throw runtime_error("Game is not started yet");
+        }
+        if (p.role() == "Captain")
+        {
+            throw runtime_error("You cannot block a Captain");
+        }
+        Captain *c = dynamic_cast<Captain *>(&p);
+        if (c->stealSuccess == false)
+        {
+            throw runtime_error("You cannot block a player that has not stolen");
+        }
+        if (c->stealSuccess == true)
+        {
+            c->money--;
+            if (c->stolenPlayer->isAlive == true && this->board != p.board)
+            {
+                c->stolenPlayer->money++;
+            }
+            c->stealSuccess = false;
+            c->stolenPlayer = NULL;
+        }
     }
+
     void Captain::steal(Player &p)
     {
         if (this->board->game_over == true && this->board->game_started == false && this->board->playersObj.size() < 2)
@@ -59,8 +83,4 @@ namespace coup
     {
         return "Captain";
     }
-
-
-
-    
 }
