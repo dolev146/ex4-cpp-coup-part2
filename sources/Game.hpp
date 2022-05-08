@@ -3,6 +3,10 @@
 #include "Player.hpp"
 #include <vector>
 #include <string>
+
+using namespace coup;
+using namespace std;
+
 namespace coup
 {
 
@@ -11,7 +15,7 @@ namespace coup
     public:
         bool gameOver;
         bool gameStarted;
-        vector<Player *> players_Pointers_array;
+        std::vector<Player *> players_Pointers_array;
         size_t counter;
         std::vector<std::string> players();
         std::string turn();
@@ -19,7 +23,7 @@ namespace coup
         void AlgoTurnRithm();
         Game();
         ~Game(){};
-    }
+    };
 }
 
 #endif

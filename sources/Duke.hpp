@@ -3,17 +3,17 @@
 #include "Player.hpp"
 #include <string>
 
-namespace
+namespace coup
 {
-    class Duke : public Player
+    class Duke : public coup::Player
     {
     public:
-        Duke(Game &board, std::string &name);
+        Duke(coup::Game &board, std::string &name);
         ~Duke();
         void block();
         void tax();
         std::string role();
-    }
-}
+    };
+};
 
 #endif /* Duke_hpp */

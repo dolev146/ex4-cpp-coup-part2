@@ -5,7 +5,7 @@ const expr int kill_cost = 3;
 namespace coup
 {
 
-    Assassin::Assassin(Game &board, std::string &name) : Player(board, name)
+    Assassin::Assassin(coup::Game &board, std::string &name) : coup::Player(board, name)
     {
         this->player_to_kill = nullptr;
     }

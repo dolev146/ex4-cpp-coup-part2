@@ -2,7 +2,7 @@
 
 namespace coup
 {
-    Duke::Duke(Game &board, std::string &name) : Player(board, name)
+    Duke::Duke(coup::Game &board, std::string &name) : Player(board, name)
     {
     }
 

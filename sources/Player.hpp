@@ -21,9 +21,9 @@ namespace coup
     {
     public:
         Game *board;
-        Player(std::string name, std::string &name);
-        ~Player();
         std::string name;
+        Player(Game &board, std::string &name);
+        ~Player();
         Actions call_that_executed_end;
         bool isAlive;
         int how_much_i_have;

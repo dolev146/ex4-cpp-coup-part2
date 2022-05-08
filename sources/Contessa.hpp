@@ -5,10 +5,10 @@
 
 namespace coup
 {
-    class Contessa : public Player
+    class Contessa : public coup::Player
     {
     public:
-        Contessa(Game &board, std::string &name);
+        Contessa(coup::Game &board, std::string &name);
         ~Contessa();
         std::string role();
         void block(Player &p);
