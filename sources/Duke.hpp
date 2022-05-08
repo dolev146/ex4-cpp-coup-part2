@@ -7,9 +7,10 @@ namespace coup
     {
     private:
     public:
+        using Player::Player;
         Duke(Game &board, string name);
         void block(Player p);
-        void role();
+        string role();
         void tax();
         ~Duke();
     };

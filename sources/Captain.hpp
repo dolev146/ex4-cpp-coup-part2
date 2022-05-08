@@ -7,10 +7,12 @@ namespace coup
     {
     private:
     public:
+        Player *stolenPlayer;
+        bool stealSuccess;
         Captain(Game &board, string name);
-        void block(Player p);
-        void steal(Player p);
-        void role();
+        void block(Player &p);
+        void steal(Player &p);
+        string role();
         ~Captain();
     };
 

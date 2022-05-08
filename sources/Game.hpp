@@ -14,8 +14,10 @@ namespace coup
     class Game
     {
     public:
-        static int turn_counter;
-        static int num_players_alive;
+        // init a static variable to keep track of the number of players
+        int num_players;
+        int turn_counter;
+        int num_players_alive;
         vector<Player *> playersObj;
         Player *current_player_turn;
         bool game_over;

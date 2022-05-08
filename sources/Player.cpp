@@ -22,14 +22,11 @@ namespace coup
     {
         p.isAlive = false;
         // update the number of players alive
-        Player::num_players_alive--;
-        // update the number of players dead
-        Player::num_players_dead++;
-        // update the number of players in game
-        Player::num_players_in_game--;
+        this->board->num_players_alive--;
     }
-    void Player::role()
+    string Player::role()
     {
+        return "";
     }
     int Player::coins()
     {
@@ -41,12 +38,22 @@ namespace coup
         this->isAlive = true;
         this->board = &board;
         this->money = 0;
-        this->id = Player::num_players;
+        this->id = this->board->playersObj.size();
+        this->asking_for_foreign_aid = false;
+
+        // if the game is over then throw an error or the game started then throw an error
+        if (this->board->game_over)
+        {
+            throw std::runtime_error("Game is over");
+        }
+        if (this->board->game_started)
+        {
+            throw std::runtime_error("Game already started");
+        }
 
         // if the number of players is less than 6, then add 1 to the number of players
-        if (Player::num_players < MAX_PLAYERS)
+        if (this->board->playersObj.size() < MAX_PLAYERS)
         {
-            Player::num_players = Player::num_players + ONE;
             // add player to playersObj
             this->board->playersObj.push_back(this);
         }
@@ -54,6 +61,12 @@ namespace coup
         {
             // if the number of players is more than 6 then throw an error
             throw std::runtime_error("Too many players");
+        }
+
+        // if this->board->num_players = 0 then set this->board->current_player_turn to this player
+        if (this->board->playersObj.size() == 0)
+        {
+            this->board->current_player_turn = this;
         }
     }
 
