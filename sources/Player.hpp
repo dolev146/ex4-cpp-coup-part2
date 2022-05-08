@@ -1,6 +1,8 @@
 #ifndef Player_hpp
 #define Player_hpp
 #include <string>
+
+using namespace std;
 namespace coup
 {
     enum Actions
@@ -22,7 +24,7 @@ namespace coup
     public:
         Game *board;
         std::string name;
-        Player(Game &board, std::string &name);
+        Player(Game &, std::string &);
         ~Player();
         Actions call_that_executed_end;
         bool isAlive;
@@ -35,7 +37,7 @@ namespace coup
         //**
         virtual void BlockMe();
         virtual std::string role();
-        void startTurn(Actions a);
+        void startTurn(Actions);
         int coins() const;
     };
 }

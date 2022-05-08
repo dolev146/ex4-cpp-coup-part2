@@ -1,5 +1,5 @@
-#include "Game.hpp"
 #include "Player.hpp"
+#include "Game.hpp"
 
 const expr int max_players = 6;
 const expr int how_much_i_have_max = 10;
@@ -7,10 +7,10 @@ const expr int how_much_need = 7;
 
 namespace coup
 {
-    Player::Player(Game &board, std::string name, std::string &name)
+    
+    Player::Player(Game &board, std::string &name)
     {
         this->board = &board;
-
         this->name = name;
         this->isAlive = true;
         this->how_much_i_have = 0;
