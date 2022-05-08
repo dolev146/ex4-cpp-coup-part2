@@ -1,8 +1,9 @@
 #include "Game.hpp"
-const expr int ONE = 1;
+
 namespace coup
 {
-    std::vector<std::string> players()
+    constexpr int ONE = 1;
+    std::vector<std::string> Game::players()
     {
         std::vector<std::string> players_return_value;
         for (auto player : players_Pointers_array)
@@ -11,7 +12,7 @@ namespace coup
         }
         return players_return_value;
     };
-    std::string turn()
+    std::string Game::turn()
     {
         // check if players pointer array is empty
         if (players_Pointers_array.empty())
@@ -21,7 +22,7 @@ namespace coup
         return players_Pointers_array[this->counter]->name;
     };
 
-    std::string winner()
+    std::string Game::winner()
     {
         // check if players pointer array doesnt have less than 1 player in it and if the game not started yet then throw
         bool temp_check1 = (players_Pointers_array.size() < ONE) ? true : false;
@@ -30,9 +31,10 @@ namespace coup
         {
             throw "No winner";
         }
+        return players_Pointers_array[this->counter]->name;
     };
 
-    void AlgoTurnRithm()
+    void Game::AlgoTurnRithm()
     {
         // replace do while with for loop
         // do
@@ -40,13 +42,14 @@ namespace coup
         //     i = (i + 1) % playersList.size();
         // } while (!playersList[i]->isAlive);
         // maybe need to fix this
-        for (int i = 0; i < players_Pointers_array.size(); i++)
+        for (size_t i = 0; i < players_Pointers_array.size(); i++)
         {
             if (players_Pointers_array[i]->isAlive)
             {
                 this->counter = (this->counter + 1) % players_Pointers_array.size();
             }
         }
+        return;
     };
 
     Game::Game()

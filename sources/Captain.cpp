@@ -2,7 +2,7 @@
 
 namespace coup
 {
-    Captain::Captain(coup::Game &board, std::string &name) : coup::Player(board, name)
+    Captain::Captain(coup::Game &board, std::string name) : coup::Player(board, name)
     {
         this->me_she_ani_rotze_laarog = nullptr;
         this->ma_she_ganavti = 0;

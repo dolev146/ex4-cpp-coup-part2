@@ -4,18 +4,18 @@
 #include <vector>
 #include <string>
 
-using namespace coup;
+
 using namespace std;
 
 namespace coup
 {
-
+    class Player;
     class Game
     {
     public:
         bool gameOver;
         bool gameStarted;
-        std::vector<Player *> players_Pointers_array;
+        std::vector<coup::Player *> players_Pointers_array;
         size_t counter;
         std::vector<std::string> players();
         std::string turn();

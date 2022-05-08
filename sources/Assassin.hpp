@@ -10,7 +10,7 @@ namespace coup
     {
     public:
         Player *player_to_kill;
-        Assassin(coup::Game &board, std::string &name);
+        Assassin(coup::Game &board, std::string name);
         ~Assassin();
         std::string role();
         void coup(Player &);

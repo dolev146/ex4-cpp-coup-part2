@@ -2,7 +2,7 @@
 
 namespace coup
 {
-    Ambassador::Ambassador(coup::Game &board, std::string &name) : coup::Player(board, name)
+    Ambassador::Ambassador(coup::Game &board, std::string name) : coup::Player(board, name)
     {
     }
 

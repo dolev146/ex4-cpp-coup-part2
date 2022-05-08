@@ -1,10 +1,12 @@
 #ifndef Player_hpp
 #define Player_hpp
+#include "Game.hpp"
 #include <string>
 
 using namespace std;
 namespace coup
 {
+    class Game;
     enum Actions
     {
         nothing,
@@ -18,7 +20,6 @@ namespace coup
         tax
     };
 
-    class Game;
     class Player
     {
     public:
@@ -37,7 +38,8 @@ namespace coup
         //**
         virtual void BlockMe();
         virtual std::string role();
-        void startTurn(Actions);
+        void startTurn();
+        void endTurn(Actions a);
         int coins() const;
     };
 }

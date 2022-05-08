@@ -7,7 +7,7 @@ namespace coup{
     class Captain : public coup::Player
     {
         public:
-            Captain(coup::Game &board, std::string &name);
+            Captain(coup::Game &board, std::string name);
             ~Captain();
             void block(Player &p);
             std::string role();

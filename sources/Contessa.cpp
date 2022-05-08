@@ -1,7 +1,7 @@
 #include "Contessa.hpp"
 
 namespace coup{
-    Contessa::Contessa(coup::Game &board, std::string &name) : coup::Player(board, name)
+    Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, name)
     {
     }
 

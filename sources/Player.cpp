@@ -1,13 +1,13 @@
 #include "Player.hpp"
 #include "Game.hpp"
-
-const expr int max_players = 6;
-const expr int how_much_i_have_max = 10;
-const expr int how_much_need = 7;
+#include <stdexcept>
 
 namespace coup
 {
-    
+    constexpr int max_players = 6;
+    constexpr int how_much_i_have_max = 10;
+    constexpr int how_much_need = 7;
+
     Player::Player(Game &board, std::string &name)
     {
         this->board = &board;
@@ -29,7 +29,7 @@ namespace coup
     //**
     void Player::startTurn()
     {
-        if (this.board->players().size() < 2)
+        if (this->board->players().size() < 2)
         {
             throw "Need two players to play";
         }
@@ -64,14 +64,14 @@ namespace coup
         endTurn(Actions::income);
     }
 
-    void Player::foreignAid()
+    void Player::foreign_aid()
     {
         if (this->how_much_i_have > how_much_i_have_max)
         {
             throw "how_much_i_have_max";
         }
         startTurn();
-        this->how_much_i_have_max += 2;
+        this->how_much_i_have += 2;
         endTurn(Actions::foreign_aid);
     }
 
@@ -99,7 +99,7 @@ namespace coup
         return this->how_much_i_have;
     }
 
-    void Player::blockMe()
+    void Player::BlockMe()
     {
         switch (this->call_that_executed_end)
         {
@@ -113,27 +113,5 @@ namespace coup
         this->call_that_executed_end = Actions::nothing;
     }
 
-    //**
-    void Player::startTurn()
-    {
-        if (this->board->players_Pointers_array.size() < 2)
-        {
-            throw "give me more";
-        }
-        if (!this->isAlive)
-        {
-            throw "not game";
-        }
-        if (this->name != this->board->turn())
-        {
-            throw "not your toy";
-        }
-        this->board->gameStarted = true;
-    }
 
-    void Player::endTurn(Actions a)
-    {
-        this->call_that_executed_end = a;
-        this->board->moveTrun();
-    }
 }
