@@ -18,7 +18,7 @@ namespace coup
         this->board->addPlayer(this);
     }
 
-      //**
+    //**
     void Player::startTurn()
     {
         stuped_fuck_shit = how_much_i_have_max;
@@ -42,7 +42,7 @@ namespace coup
      *
      */
     //**
-    void Player::endTurn(Actions a)
+    void Player::endTurn(mesimot_to_choose a)
     {
         this->call_that_executed_end = a;
         this->board->AlgoTurnRithm();
@@ -54,7 +54,7 @@ namespace coup
 
         startTurn();
         this->how_much_i_have++;
-        endTurn(Actions::income);
+        endTurn(mesimot_to_choose::income);
     }
 
     void Player::foreign_aid()
@@ -65,7 +65,7 @@ namespace coup
         }
         startTurn();
         this->how_much_i_have += 2;
-        endTurn(Actions::foreign_aid);
+        endTurn(mesimot_to_choose::foreign_aid);
     }
 
     void Player::coup(Player &p)
@@ -81,7 +81,7 @@ namespace coup
         }
         p.isAlive = false;
         this->how_much_i_have -= how_much_need;
-        endTurn(Actions::coup);
+        endTurn(mesimot_to_choose::coup);
     }
     string Player::role()
     {
@@ -92,18 +92,18 @@ namespace coup
         return this->how_much_i_have;
     }
 
-    void Player::blockme()
+    void Player::function_to_kill_it_player()
     {
         switch (this->call_that_executed_end)
         {
-        case Actions::foreign_aid:
+        case mesimot_to_choose::foreign_aid:
             how_much_i_have -= 2;
             break;
         default:
             throw invalid_argument("you can't block my last action");
             break;
         }
-        this->call_that_executed_end = Actions::nothing;
+        this->call_that_executed_end = mesimot_to_choose::nothing;
     }
 
     Player::~Player()

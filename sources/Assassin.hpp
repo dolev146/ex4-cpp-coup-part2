@@ -15,7 +15,7 @@ namespace coup
         ~Assassin();
         std::string role();
         void coup(Player &);
-        void blockme();
+        void function_to_kill_it_player();
     };
 }
 

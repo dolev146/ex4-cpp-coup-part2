@@ -12,7 +12,7 @@ namespace coup
         ~Captain();
         void block(Player &p);
         std::string role();
-        void blockme();
+        void function_to_kill_it_player();
         void steal(Player &p);
         Player *me_she_ani_rotze_laarog;
         int ma_she_ganavti;

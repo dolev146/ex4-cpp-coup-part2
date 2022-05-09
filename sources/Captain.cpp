@@ -20,11 +20,11 @@ namespace coup
     void Captain::block(Player &p)
     {
         why_not = true;
-        if (p.call_that_executed_end != Actions::steal)
+        if (p.call_that_executed_end != mesimot_to_choose::steal)
         {
             throw "not steal";
         }
-        p.blockme();
+        p.function_to_kill_it_player();
     }
 
     void Captain::steal(Player &p)
@@ -48,17 +48,17 @@ namespace coup
             p.how_much_i_have -= 2;
             this->me_she_ani_rotze_laarog = &p;
         }
-        endTurn(Actions::steal);
+        endTurn(mesimot_to_choose::steal);
     }
 
-    void Captain::blockme()
+    void Captain::function_to_kill_it_player()
     {
         switch (call_that_executed_end)
         {
-        case Actions::foreign_aid:
+        case mesimot_to_choose::foreign_aid:
             how_much_i_have -= 2;
             break;
-        case Actions::steal:
+        case mesimot_to_choose::steal:
             me_she_ani_rotze_laarog->how_much_i_have += ma_she_ganavti;
             how_much_i_have -= ma_she_ganavti;
             break;
@@ -66,7 +66,7 @@ namespace coup
             throw invalid_argument("you can't block my last action");
             break;
         }
-        call_that_executed_end = Actions::nothing;
+        call_that_executed_end = mesimot_to_choose::nothing;
     }
 
 } // namespace coup

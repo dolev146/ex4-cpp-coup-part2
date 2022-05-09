@@ -33,7 +33,7 @@ namespace coup
             p.isAlive = false;
             this->how_much_i_have -= coup_cost;
             this->player_to_kill = &p;
-            endTurn(Actions::coup);
+            endTurn(mesimot_to_choose::coup);
         }
         else
         {
@@ -41,19 +41,19 @@ namespace coup
             p.isAlive = false;
             this->player_to_kill = &p;
             this->how_much_i_have -= kill_cost;
-            endTurn(Actions::Acoup);
+            endTurn(mesimot_to_choose::Acoup);
         }
     }
 
-    void Assassin::blockme()
+    void Assassin::function_to_kill_it_player()
     {
-         why_not = true; 
+        why_not = true;
         switch (this->call_that_executed_end)
         {
-        case Actions::foreign_aid:
+        case mesimot_to_choose::foreign_aid:
             this->how_much_i_have -= 2;
             break;
-        case Actions::Acoup:
+        case mesimot_to_choose::Acoup:
             this->player_to_kill->isAlive = true;
 
             break;
@@ -61,7 +61,7 @@ namespace coup
             throw "not good choice Assasing";
             break;
         }
-        this->call_that_executed_end = Actions::nothing;
+        this->call_that_executed_end = mesimot_to_choose::nothing;
     };
 
     Assassin::~Assassin(){};

@@ -19,10 +19,10 @@ namespace coup
     void Contessa::block(Player &p)
     {
         why_not = true;
-        if (p.call_that_executed_end != Actions::Acoup)
+        if (p.call_that_executed_end != mesimot_to_choose::Acoup)
         {
             throw "throw";
         }
-        p.blockme();
+        p.function_to_kill_it_player();
     }
 }

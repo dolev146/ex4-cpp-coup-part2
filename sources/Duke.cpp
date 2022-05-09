@@ -19,18 +19,18 @@ namespace coup
     void Duke::block(Player &p)
     {
         why_not = false;
-        if (p.call_that_executed_end != Actions::foreign_aid)
+        if (p.call_that_executed_end != mesimot_to_choose::foreign_aid)
         {
             throw string("not foreign aid");
         }
-        p.blockme();
+        p.function_to_kill_it_player();
     }
 
     void Duke::tax()
     {
         startTurn();
         this->how_much_i_have += 3;
-        endTurn(Actions::tax);
+        endTurn(mesimot_to_choose::tax);
     }
 
     Duke::~Duke()

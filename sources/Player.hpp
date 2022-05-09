@@ -12,7 +12,7 @@ using namespace std;
 namespace coup
 {
     class Game;
-    enum Actions
+    enum mesimot_to_choose
     {
         nothing,
         income,
@@ -33,7 +33,7 @@ namespace coup
         std::string name;
         Player(Game &, std::string);
         ~Player();
-        Actions call_that_executed_end;
+        mesimot_to_choose call_that_executed_end;
         bool isAlive;
         int how_much_i_have;
 
@@ -42,10 +42,10 @@ namespace coup
         void coup(Player &);
 
         //**
-        virtual void blockme();
+        virtual void function_to_kill_it_player();
         virtual std::string role();
         void startTurn();
-        void endTurn(Actions a);
+        void endTurn(mesimot_to_choose a);
         int coins() const;
     };
 }

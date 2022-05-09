@@ -25,17 +25,17 @@ namespace coup
         }
         p1.how_much_i_have -= ONEAGAIN;
         p2.how_much_i_have += ONEAGAIN;
-        endTurn(Actions::transfer);
+        endTurn(mesimot_to_choose::transfer);
     }
 
     void Ambassador::block(Player &p)
     {
-        why_not = true; 
-        if (p.call_that_executed_end != Actions::steal)
+        if (p.call_that_executed_end != mesimot_to_choose::steal)
         {
-            throw invalid_argument("you can't block " + p.name + " now");
+            throw "malawach";
         }
-        p.blockme();
+        p.function_to_kill_it_player();
+        why_not = true;
     }
 
 }
