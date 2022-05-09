@@ -3,6 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
+#include "Captain.hpp"
 
 namespace coup
 {

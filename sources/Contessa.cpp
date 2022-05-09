@@ -3,7 +3,7 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
-
+#include "Contessa.hpp"
 
 namespace coup{
     Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, name)
