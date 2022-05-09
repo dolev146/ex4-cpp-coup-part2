@@ -1,12 +1,6 @@
 #ifndef Captian_hpp
 #define Captian_hpp
-
 #include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
-
 
 namespace coup{
     class Captain : public coup::Player

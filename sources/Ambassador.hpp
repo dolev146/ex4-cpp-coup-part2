@@ -1,22 +1,17 @@
-#ifndef Ambassador_hpp
-#define Ambassador_hpp
-#include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
 
+#include "Player.hpp"
+
+using namespace std;
 namespace coup
 {
     class Ambassador : public coup::Player
     {
     public:
-        Ambassador(Game &, std::string );
-        ~Ambassador();
+        Ambassador(Game &board, std::string name);
         void block(Player &p);
         std::string role();
         void transfer(Player &, Player &);
+        ~Ambassador();
     };
-};
+}
 
-#endif /* Ambassador_hpp */

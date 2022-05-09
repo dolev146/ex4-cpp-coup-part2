@@ -20,7 +20,7 @@ namespace coup
     {
         if (p.call_that_executed_end != Actions::foreign_aid)
         {
-            throw "not foreign aid";
+            throw string("not foreign aid");
         }
         p.BlockMe();
     }

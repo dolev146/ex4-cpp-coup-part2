@@ -1,16 +1,10 @@
 #ifndef Contessa_hpp
 #define Contessa_hpp
-
 #include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
-
 
 namespace coup
 {
-    class Contessa : public coup::Player
+    class Contessa : public Player
     {
     public:
         Contessa(coup::Game &board, std::string name);

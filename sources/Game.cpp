@@ -1,9 +1,4 @@
-#include "Player.hpp"
 #include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
-
 
 namespace coup
 {
@@ -42,19 +37,19 @@ namespace coup
     void Game::AlgoTurnRithm()
     {
         // replace do while with for loop
-        // do
-        // {
-        //     i = (i + 1) % playersList.size();
-        // } while (!playersList[i]->isAlive);
-        // maybe need to fix this
-        for (size_t i = 0; i < players_Pointers_array.size(); i++)
+        do
         {
-            if (players_Pointers_array[i]->isAlive)
-            {
-                this->counter = (this->counter + 1) % players_Pointers_array.size();
-            }
-        }
-        return;
+            this->counter = (this->counter + 1) % players_Pointers_array.size();
+        } while (!players_Pointers_array[this->counter]->isAlive);
+        // maybe need to fix this
+        // for (size_t i = 0; i < players_Pointers_array.size(); i++)
+        // {
+        //     if (players_Pointers_array[i]->isAlive)
+        //     {
+        //         this->counter = (this->counter + 1) % players_Pointers_array.size();
+        //     }
+        // }
+        // return;
     };
 
     Game::Game()

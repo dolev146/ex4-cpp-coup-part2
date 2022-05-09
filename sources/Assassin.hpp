@@ -2,11 +2,7 @@
 #define Assassin_hpp
 
 #include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
-
+using namespace std;
 namespace coup
 {
 
@@ -20,6 +16,6 @@ namespace coup
         void coup(Player &);
         void blockMe();
     };
-};
+}
 
 #endif /* Assassin_hpp */

@@ -1,7 +1,5 @@
 #include "Player.hpp"
 #include "Game.hpp"
-#include <string>
-#include <stdexcept>
 
 namespace coup
 {
@@ -9,6 +7,7 @@ namespace coup
     constexpr int how_much_i_have_max = 10;
     constexpr int how_much_need = 7;
 
+    class Game;
     Player::Player(Game &board, std::string name)
     {
         this->board = &board;
@@ -114,5 +113,8 @@ namespace coup
         this->call_that_executed_end = Actions::nothing;
     }
 
+    Player::~Player()
+    {
+    }
 
 }

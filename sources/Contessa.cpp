@@ -1,8 +1,4 @@
-#include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
+
 #include "Contessa.hpp"
 
 namespace coup{

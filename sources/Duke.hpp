@@ -1,12 +1,6 @@
 #ifndef Duke_hpp
 #define Duke_hpp
 #include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
-#include "Player.hpp"
-#include <string>
 
 namespace coup
 {
@@ -19,7 +13,7 @@ namespace coup
         void tax();
         std::string role();
     };
-};
+}
 
 
 

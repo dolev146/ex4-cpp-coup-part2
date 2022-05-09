@@ -1,12 +1,8 @@
-#include "Player.hpp"
-#include "Game.hpp"
-#include <string>
-#include <stdexcept>
-#include <vector>
 #include "Ambassador.hpp"
 
 namespace coup
 {
+    constexpr int ONEAGAIN = 1;
     Ambassador::Ambassador(coup::Game &board, std::string name) : Player(board, name)
     {
     }
@@ -27,19 +23,18 @@ namespace coup
         {
             throw "not enough money";
         }
-        p1.how_much_i_have -= 1;
-        p2.how_much_i_have += 1;
+        p1.how_much_i_have -= ONEAGAIN;
+        p2.how_much_i_have += ONEAGAIN;
         endTurn(Actions::transfer);
     }
 
-    void Ambassador::block(Player &p){
-        if(p.call_that_executed_end != Actions::steal){
+    void Ambassador::block(Player &p)
+    {
+        if (p.call_that_executed_end != Actions::steal)
+        {
             throw "not steal";
         }
         p.BlockMe();
     }
-
-
-
 
 }
