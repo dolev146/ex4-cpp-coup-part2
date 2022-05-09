@@ -1,4 +1,9 @@
+#include "Player.hpp"
 #include "Game.hpp"
+#include <string>
+#include <stdexcept>
+#include <vector>
+
 
 namespace coup
 {

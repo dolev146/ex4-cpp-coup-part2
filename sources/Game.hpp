@@ -1,9 +1,9 @@
 #ifndef Game_hpp
 #define Game_hpp
 #include "Player.hpp"
-#include <vector>
 #include <string>
-
+#include <stdexcept>
+#include <vector>
 
 using namespace std;
 

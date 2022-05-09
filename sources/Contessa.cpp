@@ -1,4 +1,9 @@
-#include "Contessa.hpp"
+#include "Player.hpp"
+#include "Game.hpp"
+#include <string>
+#include <stdexcept>
+#include <vector>
+
 
 namespace coup{
     Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, name)

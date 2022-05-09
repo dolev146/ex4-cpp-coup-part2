@@ -1,8 +1,12 @@
-#include "Ambassador.hpp"
+#include "Player.hpp"
+#include "Game.hpp"
+#include <string>
+#include <stdexcept>
+#include <vector>
 
 namespace coup
 {
-    Ambassador::Ambassador(coup::Game &board, std::string name) : coup::Player(board, name)
+    Ambassador::Ambassador(coup::Game &board, std::string name) : Player(board, name)
     {
     }
 
