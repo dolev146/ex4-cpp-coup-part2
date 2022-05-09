@@ -18,14 +18,14 @@ namespace coup
 
     void Ambassador::transfer(Player &p1, Player &p2)
     {
-        startTurn();
+        Tavi_li_hara();
         if (p1.how_much_i_have < 1)
         {
             throw "not enough money";
         }
         p1.how_much_i_have -= ONEAGAIN;
         p2.how_much_i_have += ONEAGAIN;
-        endTurn(mesimot_to_choose::transfer);
+        Tesayem_Ta_Hirbon(mesimot_to_choose::transfer);
     }
 
     void Ambassador::block(Player &p)
@@ -34,6 +34,7 @@ namespace coup
         {
             throw "malawach";
         }
+        // i like to block
         p.function_to_kill_it_player();
         why_not = true;
     }

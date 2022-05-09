@@ -17,7 +17,7 @@ namespace coup
 
     void Assassin::coup(Player &p)
     {
-        startTurn();
+        Tavi_li_hara();
         if (!p.isAlive)
         {
             throw "player is dead";
@@ -33,7 +33,7 @@ namespace coup
             p.isAlive = false;
             this->how_much_i_have -= coup_cost;
             this->player_to_kill = &p;
-            endTurn(mesimot_to_choose::coup);
+            Tesayem_Ta_Hirbon(mesimot_to_choose::coup);
         }
         else
         {
@@ -41,7 +41,7 @@ namespace coup
             p.isAlive = false;
             this->player_to_kill = &p;
             this->how_much_i_have -= kill_cost;
-            endTurn(mesimot_to_choose::Acoup);
+            Tesayem_Ta_Hirbon(mesimot_to_choose::Acoup);
         }
     }
 

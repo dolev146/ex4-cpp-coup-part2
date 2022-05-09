@@ -28,9 +28,9 @@ namespace coup
 
     void Duke::tax()
     {
-        startTurn();
+        Tavi_li_hara();
         this->how_much_i_have += 3;
-        endTurn(mesimot_to_choose::tax);
+        Tesayem_Ta_Hirbon(mesimot_to_choose::tax);
     }
 
     Duke::~Duke()

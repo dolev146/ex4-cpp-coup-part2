@@ -28,6 +28,7 @@ namespace coup
     class Player
     {
     public:
+        bool someshittoinvent = true;
         int stuped_fuck_shit = 0;
         Game *board;
         std::string name;
@@ -44,8 +45,8 @@ namespace coup
         //**
         virtual void function_to_kill_it_player();
         virtual std::string role();
-        void startTurn();
-        void endTurn(mesimot_to_choose a);
+        void Tavi_li_hara();
+        void Tesayem_Ta_Hirbon(mesimot_to_choose a);
         int coins() const;
     };
 }

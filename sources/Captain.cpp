@@ -29,7 +29,7 @@ namespace coup
 
     void Captain::steal(Player &p)
     {
-        startTurn();
+        Tavi_li_hara();
         if (p.how_much_i_have <= 0)
         {
             throw "not enough ";
@@ -48,24 +48,23 @@ namespace coup
             p.how_much_i_have -= 2;
             this->me_she_ani_rotze_laarog = &p;
         }
-        endTurn(mesimot_to_choose::steal);
+        Tesayem_Ta_Hirbon(mesimot_to_choose::steal);
     }
 
     void Captain::function_to_kill_it_player()
     {
-        switch (call_that_executed_end)
+
+        this->call_that_executed_end == mesimot_to_choose::foreign_aid ? how_much_i_have -= 2 : Capshit = 1;
+        if (this->call_that_executed_end == mesimot_to_choose::steal)
         {
-        case mesimot_to_choose::foreign_aid:
-            how_much_i_have -= 2;
-            break;
-        case mesimot_to_choose::steal:
-            me_she_ani_rotze_laarog->how_much_i_have += ma_she_ganavti;
+            this->me_she_ani_rotze_laarog->how_much_i_have += this->ma_she_ganavti;
             how_much_i_have -= ma_she_ganavti;
-            break;
-        default:
-            throw invalid_argument("you can't block my last action");
-            break;
         }
+        else
+        {
+            throw "dont use this";
+        }
+
         call_that_executed_end = mesimot_to_choose::nothing;
     }
 

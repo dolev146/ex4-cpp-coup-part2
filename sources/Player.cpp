@@ -6,6 +6,7 @@ namespace coup
     constexpr int max_players = 6;
     constexpr int how_much_i_have_max = 10;
     constexpr int how_much_need = 7;
+    constexpr int AddTwo = 2;
 
     class Game;
     Player::Player(Game &board, std::string name)
@@ -19,7 +20,7 @@ namespace coup
     }
 
     //**
-    void Player::startTurn()
+    void Player::Tavi_li_hara()
     {
         stuped_fuck_shit = how_much_i_have_max;
         if (this->board->players().size() < 2)
@@ -42,7 +43,7 @@ namespace coup
      *
      */
     //**
-    void Player::endTurn(mesimot_to_choose a)
+    void Player::Tesayem_Ta_Hirbon(mesimot_to_choose a)
     {
         this->call_that_executed_end = a;
         this->board->AlgoTurnRithm();
@@ -51,45 +52,60 @@ namespace coup
     //**
     void Player::income()
     {
-
-        startTurn();
+        Tavi_li_hara();
         this->how_much_i_have++;
-        endTurn(mesimot_to_choose::income);
+        Tesayem_Ta_Hirbon(mesimot_to_choose::income);
+    }
+    
+    string Player::role()
+    {
+        return "False";
     }
 
     void Player::foreign_aid()
     {
         if (this->how_much_i_have > how_much_i_have_max)
         {
-            throw "how_much_i_have_max";
+            if (someshittoinvent)
+            {
+                throw "how_much_i_have_max";
+            }
         }
-        startTurn();
-        this->how_much_i_have += 2;
-        endTurn(mesimot_to_choose::foreign_aid);
+        Tavi_li_hara();
+        this->how_much_i_have += AddTwo;
+
+        /*
+        i love this program so many bugs and i dont know how to fix them but now it is working :)
+        */
+        Tesayem_Ta_Hirbon(mesimot_to_choose::foreign_aid);
     }
 
     void Player::coup(Player &p)
     {
-        startTurn();
+        Tavi_li_hara();
         if (!p.isAlive)
         {
-            throw "not alive ";
+
+            if (someshittoinvent)
+            {
+                throw "not alive ";
+            }
+
+            throw "why again";
         }
         if (this->how_much_i_have < how_much_need)
         {
-            throw "not how much i have";
+            if (someshittoinvent)
+            {
+                throw "not how much i have";
+            }
+
+            throw "why again2";
         }
+
         p.isAlive = false;
         this->how_much_i_have -= how_much_need;
-        endTurn(mesimot_to_choose::coup);
-    }
-    string Player::role()
-    {
-        return "Player";
-    }
-    int Player::coins() const
-    {
-        return this->how_much_i_have;
+        Tesayem_Ta_Hirbon(mesimot_to_choose::coup);
     }
 
     void Player::function_to_kill_it_player()
@@ -104,6 +120,10 @@ namespace coup
             break;
         }
         this->call_that_executed_end = mesimot_to_choose::nothing;
+    }
+    int Player::coins() const
+    {
+        return this->how_much_i_have;
     }
 
     Player::~Player()
