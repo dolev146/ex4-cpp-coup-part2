@@ -23,7 +23,7 @@ namespace coup
         {
             throw "not steal";
         }
-        p.BlockMe();
+        p.blockme();
     }
 
     void Captain::steal(Player &p)
@@ -50,21 +50,22 @@ namespace coup
         endTurn(Actions::steal);
     }
 
-    void Captain::blockMe()
+    void Captain::blockme()
     {
-        switch (this->call_that_executed_end)
+        switch (call_that_executed_end)
         {
         case Actions::foreign_aid:
-            this->how_much_i_have -= 2;
+            how_much_i_have -= 2;
             break;
         case Actions::steal:
-            this->me_she_ani_rotze_laarog->how_much_i_have += this->ma_she_ganavti;
-            this->how_much_i_have -= this->ma_she_ganavti;
+            me_she_ani_rotze_laarog->how_much_i_have += ma_she_ganavti;
+            how_much_i_have -= ma_she_ganavti;
+            break;
         default:
-            throw "not good choice";
+            throw invalid_argument("you can't block my last action");
             break;
         }
-        this->call_that_executed_end = Actions::nothing;
+        call_that_executed_end = Actions::nothing;
     }
 
 } // namespace coup

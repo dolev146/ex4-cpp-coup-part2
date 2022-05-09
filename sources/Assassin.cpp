@@ -23,15 +23,15 @@ namespace coup
             throw "player is dead";
         }
         // if not enaugh coins to kill
-        if (p.how_much_i_have < kill_cost)
+        if (this->how_much_i_have < 3)
         {
             throw "not enough coins";
         }
         // if this doesnt have enough coins to coup
-        if (this->how_much_i_have >= coup_cost)
+        if (this->how_much_i_have >= 7)
         {
             p.isAlive = false;
-            this->how_much_i_have -= coup_cost;
+            this->how_much_i_have -= 7;
             this->player_to_kill = &p;
             endTurn(Actions::coup);
         }
@@ -40,12 +40,12 @@ namespace coup
             // kill
             p.isAlive = false;
             this->player_to_kill = &p;
-            this->how_much_i_have -= kill_cost;
+            this->how_much_i_have -= 3;
             endTurn(Actions::Acoup);
         }
     }
 
-    void Assassin::blockMe()
+    void Assassin::blockme()
     {
         switch (this->call_that_executed_end)
         {
@@ -54,9 +54,10 @@ namespace coup
             break;
         case Actions::Acoup:
             this->player_to_kill->isAlive = true;
+
             break;
         default:
-            throw "not good choice";
+            throw "not good choice Assasing";
             break;
         }
         this->call_that_executed_end = Actions::nothing;

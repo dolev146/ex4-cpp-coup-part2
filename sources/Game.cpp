@@ -8,7 +8,10 @@ namespace coup
         std::vector<std::string> players_return_value;
         for (auto player : players_Pointers_array)
         {
-            players_return_value.push_back(player->name);
+            if (player->isAlive)
+            {
+                players_return_value.push_back(player->name);
+            }
         }
         return players_return_value;
     };
@@ -22,16 +25,30 @@ namespace coup
         return players_Pointers_array[this->counter]->name;
     };
 
+    void Game::addPlayer(Player *p)
+    {
+        if (players().size() >= 6)
+        {
+            throw runtime_error("Need up to six players to play");
+        }
+        if (this->gameStarted)
+        {
+            throw runtime_error("Add Player In Middle Of Game");
+        }
+
+        this->players_Pointers_array.push_back(p);
+    }
+
     std::string Game::winner()
     {
         // check if players pointer array doesnt have less than 1 player in it and if the game not started yet then throw
-        bool temp_check1 = (players_Pointers_array.size() < ONE) ? true : false;
-        bool temp_check2 = (this->gameStarted == false) ? true : false;
-        if (temp_check1 || temp_check2)
+        // bool temp_check1 =  ? true : false;
+        // bool temp_check2 =  ? true : false;
+        if (players().size() != 1 || !gameStarted)
         {
-            throw "No winner";
+            throw runtime_error("their is no winner in this game");
         }
-        return players_Pointers_array[this->counter]->name;
+        return this->players_Pointers_array[this->counter]->name;
     };
 
     void Game::AlgoTurnRithm()

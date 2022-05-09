@@ -1,7 +1,6 @@
 #ifndef Player_hpp
 #define Player_hpp
 
-
 #include "Game.hpp"
 #include <string>
 #include <stdexcept>
@@ -31,7 +30,7 @@ namespace coup
     public:
         Game *board;
         std::string name;
-        Player(Game &, std::string );
+        Player(Game &, std::string);
         ~Player();
         Actions call_that_executed_end;
         bool isAlive;
@@ -42,7 +41,7 @@ namespace coup
         void coup(Player &);
 
         //**
-        virtual void BlockMe();
+        virtual void blockme();
         virtual std::string role();
         void startTurn();
         void endTurn(Actions a);

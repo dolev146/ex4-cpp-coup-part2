@@ -7,7 +7,7 @@
 
 namespace coup
 {
-      Duke::Duke(coup::Game &board, std::string name) : coup::Player(board, name)
+    Duke::Duke(coup::Game &board, std::string name) : coup::Player(board, name)
     {
     }
 
@@ -22,7 +22,7 @@ namespace coup
         {
             throw string("not foreign aid");
         }
-        p.BlockMe();
+        p.blockme();
     }
 
     void Duke::tax()

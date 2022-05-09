@@ -15,16 +15,10 @@ namespace coup
         this->isAlive = true;
         this->how_much_i_have = 0;
         this->call_that_executed_end = nothing;
-        if (this->board->players_Pointers_array.size() >= max_players)
-        {
-            throw "Too many players";
-        }
-        if (this->board->gameStarted)
-        {
-            throw "Game already started";
-        }
-        this->board->players_Pointers_array.push_back(this);
+        this->board->addPlayer(this);
     }
+
+  
 
     //**
     void Player::startTurn()
@@ -99,15 +93,15 @@ namespace coup
         return this->how_much_i_have;
     }
 
-    void Player::BlockMe()
+    void Player::blockme()
     {
         switch (this->call_that_executed_end)
         {
         case Actions::foreign_aid:
-            this->how_much_i_have -= 2;
+            how_much_i_have -= 2;
             break;
         default:
-            throw "not supported";
+            throw invalid_argument("you can't block my last action");
             break;
         }
         this->call_that_executed_end = Actions::nothing;

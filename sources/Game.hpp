@@ -6,7 +6,6 @@
 #include <string>
 #include "Player.hpp"
 
-
 using namespace std;
 
 namespace coup
@@ -17,12 +16,15 @@ namespace coup
     public:
         bool gameOver;
         bool gameStarted;
+
         std::vector<coup::Player *> players_Pointers_array;
+
         size_t counter;
         std::vector<std::string> players();
         std::string turn();
         std::string winner();
         void AlgoTurnRithm();
+        void addPlayer(Player *p);
         Game();
         ~Game(){};
     };

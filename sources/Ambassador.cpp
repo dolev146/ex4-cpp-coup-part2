@@ -30,11 +30,11 @@ namespace coup
 
     void Ambassador::block(Player &p)
     {
-        if (p.call_that_executed_end != Actions::steal)
+             if (p.call_that_executed_end != Actions::steal)
         {
-            throw "not steal";
+            throw invalid_argument("you can't block " + p.name + " now");
         }
-        p.BlockMe();
+        p.blockme();
     }
 
 }

@@ -1,7 +1,8 @@
 
 #include "Contessa.hpp"
 
-namespace coup{
+namespace coup
+{
     Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, name)
     {
     }
@@ -21,6 +22,6 @@ namespace coup{
         {
             throw "throw";
         }
-        p.BlockMe();
+        p.blockme();
     }
 }
