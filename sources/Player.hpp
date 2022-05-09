@@ -28,6 +28,7 @@ namespace coup
     class Player
     {
     public:
+        int stuped_fuck_shit = 0;
         Game *board;
         std::string name;
         Player(Game &, std::string);

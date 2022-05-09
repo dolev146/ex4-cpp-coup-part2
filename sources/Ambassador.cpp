@@ -3,7 +3,7 @@
 namespace coup
 {
     constexpr int ONEAGAIN = 1;
-    Ambassador::Ambassador(coup::Game &board, std::string name) : Player(board, name)
+    Ambassador::Ambassador(coup::Game &board, std::string name) : Player(board, std::move(name))
     {
     }
 
@@ -30,7 +30,8 @@ namespace coup
 
     void Ambassador::block(Player &p)
     {
-             if (p.call_that_executed_end != Actions::steal)
+        why_not = true; 
+        if (p.call_that_executed_end != Actions::steal)
         {
             throw invalid_argument("you can't block " + p.name + " now");
         }

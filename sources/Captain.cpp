@@ -2,7 +2,7 @@
 
 namespace coup
 {
-    Captain::Captain(coup::Game &board, std::string name) : coup::Player(board, name)
+    Captain::Captain(coup::Game &board, std::string name) : coup::Player(board, std::move(name))
     {
         this->me_she_ani_rotze_laarog = nullptr;
         this->ma_she_ganavti = 0;
@@ -19,6 +19,7 @@ namespace coup
 
     void Captain::block(Player &p)
     {
+        why_not = true;
         if (p.call_that_executed_end != Actions::steal)
         {
             throw "not steal";

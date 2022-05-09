@@ -11,18 +11,17 @@ namespace coup
     Player::Player(Game &board, std::string name)
     {
         this->board = &board;
-        this->name = name;
+        this->name = move(name);
         this->isAlive = true;
         this->how_much_i_have = 0;
         this->call_that_executed_end = nothing;
         this->board->addPlayer(this);
     }
 
-  
-
-    //**
+      //**
     void Player::startTurn()
     {
+        stuped_fuck_shit = how_much_i_have_max;
         if (this->board->players().size() < 2)
         {
             throw "Need two players to play";

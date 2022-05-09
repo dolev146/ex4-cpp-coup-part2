@@ -3,10 +3,11 @@
 namespace coup
 {
     constexpr int ONE = 1;
+    constexpr int  limited_player_number = 6;
     std::vector<std::string> Game::players()
     {
         std::vector<std::string> players_return_value;
-        for (auto player : players_Pointers_array)
+        for (auto *player : players_Pointers_array)
         {
             if (player->isAlive)
             {
@@ -27,7 +28,7 @@ namespace coup
 
     void Game::addPlayer(Player *p)
     {
-        if (players().size() >= 6)
+        if (players().size() >= limited_player_number)
         {
             throw runtime_error("Need up to six players to play");
         }

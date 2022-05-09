@@ -7,6 +7,7 @@ namespace coup
     class Ambassador : public coup::Player
     {
     public:
+        bool why_not = false;
         Ambassador(Game &board, std::string name);
         void block(Player &p);
         std::string role();
@@ -14,4 +15,3 @@ namespace coup
         ~Ambassador();
     };
 }
-

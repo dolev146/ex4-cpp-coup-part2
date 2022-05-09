@@ -7,7 +7,7 @@
 
 namespace coup
 {
-    Duke::Duke(coup::Game &board, std::string name) : coup::Player(board, name)
+    Duke::Duke(coup::Game &board, std::string name) : coup::Player(board, std::move(name))
     {
     }
 
@@ -18,6 +18,7 @@ namespace coup
 
     void Duke::block(Player &p)
     {
+        why_not = false;
         if (p.call_that_executed_end != Actions::foreign_aid)
         {
             throw string("not foreign aid");

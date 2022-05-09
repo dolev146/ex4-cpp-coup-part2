@@ -7,6 +7,7 @@ namespace coup
     class Captain : public coup::Player
     {
     public:
+        bool why_not = false;
         Captain(coup::Game &board, std::string name);
         ~Captain();
         void block(Player &p);

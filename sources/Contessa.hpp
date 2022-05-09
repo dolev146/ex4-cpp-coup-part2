@@ -7,6 +7,7 @@ namespace coup
     class Contessa : public Player
     {
     public:
+        bool why_not = false;
         Contessa(coup::Game &board, std::string name);
         ~Contessa();
         std::string role();

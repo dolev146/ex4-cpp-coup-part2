@@ -9,6 +9,7 @@ namespace coup
     class Assassin : public coup::Player
     {
     public:
+        bool why_not = false;
         Player *player_to_kill;
         Assassin(coup::Game &board, std::string name);
         ~Assassin();

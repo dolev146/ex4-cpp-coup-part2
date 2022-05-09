@@ -3,7 +3,7 @@
 
 namespace coup
 {
-    Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, name)
+    Contessa::Contessa(coup::Game &board, std::string name) : coup::Player(board, std::move(name))
     {
     }
 
@@ -18,6 +18,7 @@ namespace coup
 
     void Contessa::block(Player &p)
     {
+        why_not = true;
         if (p.call_that_executed_end != Actions::Acoup)
         {
             throw "throw";
